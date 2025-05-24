@@ -93,3 +93,65 @@ Recomendación: Crear un pod de ejemplo para verificar que la red y la configura
 
 No se instalaron herramientas como metrics-server o dashboard:
 Motivo: Enfocados en solucionar la base, no se alcanzó a implementar herramientas de monitoreo o UI.
+________________________________________________
+Errores Identificados y Soluciones Aplicadas
+1.1 Repositorio de Kubernetes no válido
+Error presentado:
+E: El repositorio «https://apt.kubernetes.io kubernetes-xenial Release» no tiene un fichero de Publicación.
+
+Causa: Se utilizó el nombre de versión de Ubuntu "xenial", el cual no es compatible con las versiones actuales del repositorio oficial.
+
+Solución: Se reemplazó "xenial" por una versión LTS soportada, como "focal" (Ubuntu 20.04) o "jammy" (Ubuntu 22.04), en el archivo de repositorio correspondiente.
+
+1.2 Comando kubeadm no encontrado
+Error presentado:
+kubeadm: command not found
+
+Causa: La herramienta kubeadm no estaba instalada.
+
+Solución: Se instaló utilizando el siguiente comando:
+
+sudo apt install -y kubeadm
+1.3 Fallo durante la inicialización con kubeadm
+Errores presentados:
+
+[ERROR NumCPU]: the number of available CPUs is less than the required 2
+[ERROR KubeletVersion]: couldn't get kubelet version
+Causa:
+
+El sistema tenía asignada solo una CPU, cuando kubeadm requiere al menos dos.
+
+El servicio kubelet no estaba habilitado ni instalado correctamente.
+
+Solución:
+
+Se incrementó el número de CPUs asignadas a la máquina virtual.
+
+Se instalaron y habilitaron los servicios correspondientes:
+
+sudo apt install -y kubelet
+sudo systemctl enable kubelet
+sudo systemctl start kubelet
+1.4 Archivo de configuración no encontrado al copiar admin.conf
+Error presentado:
+cp: cannot stat '/etc/kubernetes/admin.conf': No such file or directory
+
+Causa: El archivo no se generó debido a un fallo previo en la ejecución de kubeadm init.
+
+Solución: Una vez corregido el fallo de inicialización, el archivo fue generado correctamente y copiado con:
+
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+1.5 Falta de red de pods
+Problema: El clúster no contaba con una red de pods configurada, lo cual impedía la comunicación entre los mismos.
+
+Solución: Se implementó la red Flannel mediante:
+
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+
+1.6 Dificultad para ingresar símbolos en el teclado
+Problema presentado: Imposibilidad de escribir el símbolo ^ en teclado con distribución estadounidense.
+
+Solución: Se indicó la combinación correcta: Shift + 6.
