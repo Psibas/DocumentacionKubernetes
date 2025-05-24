@@ -80,6 +80,7 @@ Lo que no se logró
 •	Sugerido usar herramientas como Minikube para entornos de prueba.
 ________________________________________________
 Aspectos que no se lograron completar del todo
+
  El nodo maestro no tuvo nodos trabajadores unidos:
 Faltó: Ejecutar el comando kubeadm join desde otro nodo para integrarlo al clúster.
 
