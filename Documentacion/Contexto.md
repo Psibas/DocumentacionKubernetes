@@ -8,6 +8,7 @@ En las zonas rurales del departamento de Cundinamarca, Colombia, un colegio enfr
 - Equipos de bajo rendimiento que impiden la instalación de software moderno o la ejecución de entornos virtuales.
 - Ausencia de recursos tecnológicos locales para realizar prácticas en tecnologías emergentes.
 - Se propone implementar un entorno local de aprendizaje basado en Kubernetes en una red LAN educativa, usando máquinas virtuales con Ubuntu Server y kubeadm o Minikube, para simular prácticas reales de orquestación y despliegue de servicios sin necesidad de internet.
+![Topología del clúster Kubernetes](ola(1).jpg)
 
 ## B. Tecnologías a Usar
 - **Ubuntu Server**: sistema operativo base para todos los nodos del clúster, elegido por su estabilidad, compatibilidad con Kubernetes, bajo consumo de recursos y amplia documentación.
