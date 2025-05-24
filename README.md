@@ -78,3 +78,17 @@ Lo que no se logró
 •	Conectar nodos trabajadores (no se completó por falta de entorno multi-nodo).
 •	Requiere revisar compatibilidad de hardware virtual.
 •	Sugerido usar herramientas como Minikube para entornos de prueba.
+________________________________________________
+Aspectos que no se lograron completar del todo
+ El nodo maestro no tuvo nodos trabajadores unidos:
+Faltó: Ejecutar el comando kubeadm join desde otro nodo para integrarlo al clúster.
+
+Razón: No se configuraron múltiples nodos (por ejemplo, otras VMs o PCs).
+
+Falta de pruebas de despliegue de pods:
+No se verificó: Desplegar un pod de prueba y hacer kubectl get pods -A para validar funcionamiento.
+
+Recomendación: Crear un pod de ejemplo para verificar que la red y la configuración estén correctas.
+
+No se instalaron herramientas como metrics-server o dashboard:
+Motivo: Enfocados en solucionar la base, no se alcanzó a implementar herramientas de monitoreo o UI.
