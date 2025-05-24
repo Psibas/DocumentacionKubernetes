@@ -72,6 +72,8 @@ Lo que se logró
 •	Inicialización del clúster en el nodo maestro.
 •	Instalación exitosa de red de pods (Flannel).
 •	Corrección de errores comunes como falta de CPU, fallo de repositorio y permisos de archivos.
+
+
 Lo que no se logró 
 •	Conectar nodos trabajadores (no se completó por falta de entorno multi-nodo).
 •	Requiere revisar compatibilidad de hardware virtual.
