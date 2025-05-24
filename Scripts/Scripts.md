@@ -1,4 +1,4 @@
-# 🚀 Scripts de Instalación y Configuración de Kubernetes
+# 🧑🏽‍💻 Scripts de Instalación y Configuración de Kubernetes
 
 Este documento contiene todos los comandos Bash utilizados en la instalación de Kubernetes en Ubuntu Server 24.0x.
 
