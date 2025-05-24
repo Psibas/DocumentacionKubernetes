@@ -2,9 +2,9 @@
 Manual de instalación de Kubernetes con kubeadm (con explicación de comandos y errores comunes)
 Este manual documenta detalladamente los pasos realizados, errores encontrados, imágenes de referencia y posibles mejoras durante la instalación de un clúster Kubernetes con kubeadm en un entorno Ubuntu. Se incluyen explicaciones técnicas de cada comando, los errores corregidos y una reflexión final sobre lo que se logró y lo que no.
 ________________________________________
-📌 Objetivo
+Objetivo
 Instalar y configurar un clúster de Kubernetes desde cero usando kubeadm, incluyendo la configuración del nodo maestro, instalación de red de pods y conexión de nodos trabajadores.
-🛠️ Requisitos previos
+Requisitos previos
 •	Ubuntu 20.04 o 22.04 (se recomienda evitar versiones no LTS).
 •	Conexión a internet estable.
 •	Acceso root o sudo.
